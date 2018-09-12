@@ -45,4 +45,10 @@ public class Point {
 		}
 		return false;
 	}*/
+	
+	/*@Override
+	public int hashCode() {
+		return (int) (37*myX + myY);
+		//return toString().hashCode();
+	}*/
 }
