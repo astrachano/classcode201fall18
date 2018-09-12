@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class SlowStaticUnique {
@@ -22,6 +23,6 @@ public class SlowStaticUnique {
 		System.out.printf("total #: %d, unique #: %d\n" , 
 				          wcount, list.size());
 		System.out.printf("time: %2.3g\n", (end-start)/1e9);
-       s.close(); 
+        s.close(); 
     }
 }
