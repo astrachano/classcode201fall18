@@ -37,14 +37,14 @@ public class Point {
 		return myX;
 	}
 	
-	/*@Override
+	@Override
 	public boolean equals(Object o) {
 		Point other = (Point) o;
 		if (other.myX == myX && other.myY == myY) {
 			return true;
 		}
 		return false;
-	}*/
+	}
 	
 	/*@Override
 	public int hashCode() {
