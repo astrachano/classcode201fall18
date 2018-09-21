@@ -17,11 +17,15 @@ public class RandomPointDriver {
 			System.out.println(p);
 		}
 		
-		/*HashSet<Integer> set = new HashSet<>();
+		HashSet<Integer> set = new HashSet<>();
 		for(Point p : array) {
+			System.out.printf("%s\t%d\n", p,p.hashCode());
 			set.add(p.hashCode());
 		}
-		System.out.printf("set = %d, list = %d\n",set.size(), list.size());*/
+		for(int i : set) {
+			System.out.println(i);
+		}
+		System.out.printf("set = %d, list = %d\n",set.size(), list.size());
 	}
 	
 }

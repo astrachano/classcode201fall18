@@ -35,9 +35,7 @@ public class CountingStringsBenchmark {
 		ArrayList<Integer> counter = new ArrayList<>();
 		
 		for(String w : list) {
-
-			int index = words.indexOf(w);
-			
+			int index = words.indexOf(w);			
 			if (index == -1){
 				words.add(w);
 				counter.add(1);

@@ -39,6 +39,7 @@ public class Point {
 	
 	@Override
 	public boolean equals(Object o) {
+
 		Point other = (Point) o;
 		if (other.myX == myX && other.myY == myY) {
 			return true;
@@ -46,9 +47,9 @@ public class Point {
 		return false;
 	}
 	
-	/*@Override
+	@Override
 	public int hashCode() {
 		return (int) (37*myX + myY);
 		//return toString().hashCode();
-	}*/
+	}
 }

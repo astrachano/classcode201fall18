@@ -9,18 +9,25 @@ public class StringWrapper implements Comparable<StringWrapper>{
 		myString = s;
 	}
 	
+	public StringWrapper(StringWrapper sw) {
+		myString = sw.myString;
+	}
+	
 	@Override
 	public int hashCode() {
 		ourHashCount += 1;
+		System.out.println("hash called on "+myString);
 		return myString.hashCode();
 	}
 	
 	@Override
 	public boolean equals(Object o) {
 		ourEqualsCount += 1;
+		System.out.println("equal called on "+myString);
 		if (o.getClass() != this.getClass()) {
 			return false;
 		}
+		
 		String other = ((StringWrapper) o).myString;
 		return myString.equals(other);
 	}
