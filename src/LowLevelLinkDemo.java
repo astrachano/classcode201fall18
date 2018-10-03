@@ -45,4 +45,12 @@ public class LowLevelLinkDemo {
 		}
 		System.out.println();
 	}
+	private void print(String[] list) {
+		int index = 0;
+		while (index < list.length) {
+			System.out.printf("%s,",list[index]);
+			index += 1;
+		}
+		System.out.println();
+	}
 }
