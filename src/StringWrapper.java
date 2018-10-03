@@ -17,7 +17,8 @@ public class StringWrapper implements Comparable<StringWrapper>{
 	public int hashCode() {
 		ourHashCount += 1;
 		System.out.println("hash called on "+myString);
-		return myString.hashCode();
+		//return myString.hashCode();
+		return 5;
 	}
 	
 	@Override
@@ -27,9 +28,9 @@ public class StringWrapper implements Comparable<StringWrapper>{
 		if (o.getClass() != this.getClass()) {
 			return false;
 		}
-		
-		String other = ((StringWrapper) o).myString;
-		return myString.equals(other);
+		StringWrapper other = (StringWrapper) o;
+		String ostr = other.myString;
+		return myString.equals(ostr);
 	}
 	
 	@Override
