@@ -10,6 +10,13 @@ public class IntLinkDemo {
 		}
 	}
 	
+	public void print(Node list) {
+		while (list != null) {
+			System.out.printf("%d,",list.info);
+			list = list.next;
+		}
+		System.out.println();
+	}
 	public int calc(Node list) {
 		int t = 0;
 		while (list != null) {
@@ -18,6 +25,24 @@ public class IntLinkDemo {
 		}
 		return t;
 	}
+	
+	public Node build3() {
+		Node a = new Node(9,null);
+		Node b = new Node(6,null);
+		Node c = new Node(3,null);
+		
+		// what is list c here?
+		
+		c.next = b;
+		b.next = a;
+		// what is list c here?
+		
+		a.next = c;
+		// what is list c here?
+		
+		return c;
+	}
+	
 	
 	public void demo() {
 		Node first = new Node(1,
