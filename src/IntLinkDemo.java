@@ -37,7 +37,7 @@ public class IntLinkDemo {
 		b.next = a;
 		// what is list c here?
 		
-		a.next = c;
+		//a.next = c;
 		// what is list c here?
 		
 		return c;
@@ -52,6 +52,9 @@ public class IntLinkDemo {
 		int b = calc(first);
 		int total = a + b;
 		System.out.println(total);
+		
+		Node xx = build3();
+		print(xx);
 	}
 	public static void main(String[] args) {
 		IntLinkDemo x = new IntLinkDemo();

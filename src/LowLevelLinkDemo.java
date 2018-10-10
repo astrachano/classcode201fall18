@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class LowLevelLinkDemo {
 	private class Node{
@@ -10,17 +11,49 @@ public class LowLevelLinkDemo {
 	}
 	
 	public static void main(String[] args) {
-		String[] vg = {"squash", "corn", "artichoke",
-				       "peas", "asparagus"};
+		String[] vg = {"squash", "corn", "artichoke", "asparagus",
+				       "peas", "corn", "squash","asparagus"};
 		
 		LowLevelLinkDemo ld = new LowLevelLinkDemo();
 		Node list1 = ld.createList(vg);
 		Node list2 = ld.createListFront(vg);
 		
-		ld.print(list1);
-		ld.print(list2);
+		System.out.println(ld.toString(list1));
+		//ld.print(list2);
+		list1 = ld.deleteAll(list1, "asparagus");
+		System.out.println(ld.toString(list1));
+		list1 = ld.deleteAll(list1,"squash");
+		System.out.println(ld.toString(list1));
 	}
 
+	private Node deleteAllRec(Node list, String target) {
+		if (list == null) return null;
+		Node after = deleteAllRec(list.next, target);
+		if (list.info.equals(target)) {
+			return after;
+		}
+		list.next = after;
+		return list;
+	}
+	
+	private Node deleteAll(Node list, String target) {
+	    Node first = list;
+	    if (first == null) return null;
+	    // invariant: list != null
+	    while (list.next != null) {
+	    	if (list.next.info.equals(target)) {
+	    		list.next = list.next.next;
+	    	}
+	    	else {
+	    		list = list.next;
+	    	}
+	    }
+	    // all done except first node
+	    if (first.info.equals(target)) {
+	    	return first.next;
+	    }
+	    return first;
+	}
 	private Node createList(String[] vg) {
 		Node first = new Node(vg[0], null);
 		Node last = first;
@@ -38,19 +71,13 @@ public class LowLevelLinkDemo {
 		}
 		return first;
 	}
-	private void print(Node list) {
+	private String toString(Node list) {
+		ArrayList<String> array = new ArrayList<>();
+		
 		while (list != null) {
-			System.out.printf("%s,", list.info);
+			array.add(list.info);
 			list = list.next;
 		}
-		System.out.println();
-	}
-	private void print(String[] list) {
-		int index = 0;
-		while (index < list.length) {
-			System.out.printf("%s,",list[index]);
-			index += 1;
-		}
-		System.out.println();
+		return String.join(",", array);
 	}
 }
