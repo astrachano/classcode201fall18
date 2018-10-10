@@ -13,7 +13,8 @@ public class ListRemove {
 		return proto;
 	}
 	
-	public List<String> removeAll(String target, List<String> list){
+	public List<String> removeAll(String target, 
+			                      List<String> list){
 		for(String w : list) {
 			if (w.equals(target)) {
 				list.remove(w);
@@ -22,7 +23,8 @@ public class ListRemove {
 		return list;
 	}
 	
-	public List<String> removeAllIterator(String target, List<String> list) {
+	public List<String> removeAllIterator(String target, 
+			                              List<String> list) {
 		Iterator<String> iter = list.iterator();
 		while (iter.hasNext()) {
 			String w = iter.next();
@@ -33,7 +35,8 @@ public class ListRemove {
 		return list;
 	}
 	
-	public List<String> removeAllWrong(String target, List<String> list) {
+	public List<String> removeAllWrong(String target, 
+			                           List<String> list) {
 		for(int k=0; k < list.size(); k++) {
 			String w = list.get(k);
 			if (w.equals(target)) {
@@ -63,7 +66,8 @@ public class ListRemove {
 		int tsize = Collections.frequency(list, target);
 		//removeAllGack(list.get(0),list);
 		//removeAllWrong(list.get(0),list);
-		removeAllIterator(list.get(0),list);
+		//removeAllIterator(list.get(0),list);
+		removeAll(list.get(0),list);
 		double end = System.nanoTime();
 		if (list.size() != presize-tsize) {
 			System.out.printf("error on remove %d occurrences of %s from %d: %d not %d\n", tsize,target,presize,list.size(),presize-tsize);
