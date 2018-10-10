@@ -11,10 +11,8 @@ public static long THRESHOLD = 1000000L; // one million bytes
             if (f.isDirectory()) {
                 long subSize = findBig(f,tab+"\t");
                 sum += subSize;
-                // sum += findBig(f,tab+"\t");
             }
-            else {
-                
+            else {	             
                 if (f.length() > THRESHOLD){
                     sum += f.length();
                     System.out.printf("%s%s%8d\n", tab, f.getName(), f.length());
