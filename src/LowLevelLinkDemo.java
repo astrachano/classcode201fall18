@@ -28,6 +28,7 @@ public class LowLevelLinkDemo {
 
 	private Node deleteAllRec(Node list, String target) {
 		if (list == null) return null;
+		
 		Node after = deleteAllRec(list.next, target);
 		if (list.info.equals(target)) {
 			return after;
@@ -39,6 +40,7 @@ public class LowLevelLinkDemo {
 	private Node deleteAll(Node list, String target) {
 	    Node first = list;
 	    if (first == null) return null;
+	    
 	    // invariant: list != null
 	    while (list.next != null) {
 	    	if (list.next.info.equals(target)) {

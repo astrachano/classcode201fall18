@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class DoubleLink {
 	public class Node {
@@ -40,24 +41,25 @@ public class DoubleLink {
 		}
 		return list;
 	}
-	public void printRev(Node list) {
+	public String toStringReverse(Node list) {
 		// find last node
 		while (list != null && list.next != null) {
 			list = list.next;
 		}
+		ArrayList<String> array = new ArrayList<>();
 		while (list != null) {
-			System.out.printf("%s,", list.info);
+			array.add(list.info);
 			list = list.prev;
 		}
-		System.out.println();
+		return String.join(",", array);
 	}
-	public void print(Node list) {
+	public String toString(Node list) {
+		ArrayList<String> array = new ArrayList<>();
 		while (list != null) {
-			System.out.printf("%s,", list.info);
+			array.add(list.info);
 			list = list.next;
 		}
-		System.out.println();
-		
+		return String.join(",", array);	
 	}
 	
 	public void deleteDemo() {
@@ -69,11 +71,11 @@ public class DoubleLink {
 				list.next.prev = list;
 			}
 		}
-		print(list);
-		printRev(list);
+		System.out.println(toString(list));
+		System.out.println(toStringReverse(list));
 		list = deleteAll(list,"cat");
-		print(list);
-		printRev(list);
+		System.out.println(toString(list));
+		System.out.println(toStringReverse(list));
 	}
 	public static void main(String[] args) {
 		DoubleLink demo = new DoubleLink();
