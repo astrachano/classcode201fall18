@@ -1,8 +1,15 @@
 import java.io.File;
 
 public class BigFiles {
-public static long THRESHOLD = 1000000L; // one million bytes
+public static long THRESHOLD = 10000000L; // one million bytes
     
+
+	/**
+	 * dir is a folder, find big files in dir
+	 * @param dir
+	 * @param tab
+	 * @return
+	 */
     public static long findBig(File dir, String tab) {
         File[] dirContents = dir.listFiles();
         System.out.println(tab+"**:"+dir.getPath());

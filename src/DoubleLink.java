@@ -34,8 +34,10 @@ public class DoubleLink {
 		Node current = list;
 		while (current != null) {
 			if (current.info.equals(target)) {
-				current.prev.next = current.next;
-				current.next.prev = current.prev;
+				if (current.prev != null)
+					current.prev.next = current.next;
+				if (current.next != null)
+					current.next.prev = current.prev;
 			}
 			current = current.next;
 		}
@@ -73,7 +75,7 @@ public class DoubleLink {
 		}
 		System.out.println(toString(list));
 		System.out.println(toStringReverse(list));
-		list = deleteAll(list,"cat");
+		list = deleteAll(list,"ant");
 		System.out.println(toString(list));
 		System.out.println(toStringReverse(list));
 	}

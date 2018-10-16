@@ -66,8 +66,8 @@ public class ListRemove {
 		int tsize = Collections.frequency(list, target);
 		//removeAllGack(list.get(0),list);
 		//removeAllWrong(list.get(0),list);
-		//removeAllIterator(list.get(0),list);
-		removeAll(list.get(0),list);
+		removeAllIterator(list.get(0),list);
+		//removeAll(list.get(0),list);
 		double end = System.nanoTime();
 		if (list.size() != presize-tsize) {
 			System.out.printf("error on remove %d occurrences of %s from %d: %d not %d\n", tsize,target,presize,list.size(),presize-tsize);
