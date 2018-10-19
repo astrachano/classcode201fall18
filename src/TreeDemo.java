@@ -30,7 +30,7 @@ public class TreeDemo {
 	public void print(TreeNode root) {
 		if (root != null) {
 			print(root.left);
-			System.out.println	(root.info);
+			System.out.println(root.info);
 			print(root.right);
 		}
 	}
