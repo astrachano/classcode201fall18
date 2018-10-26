@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class Point {
+public class Point implements Comparable<Point> {
 	private double myX;
 	private double myY;
 	
@@ -51,5 +53,25 @@ public class Point {
 	public int hashCode() {
 		return (int) (37*myX + myY);
 		//return toString().hashCode();
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<Point> list = new ArrayList<>();
+		list.add(new Point(0,7));
+		list.add(new Point(0,5));
+		Collections.sort(list);
+		for(Point p : list) {
+			System.out.println(p);
+		}
+	}
+
+	@Override
+	public int compareTo(Point o) {
+		// TODO Auto-generated method stub
+		if (this.myX < o.myX) return -1;
+		if (this.myY < o.myY) return -1;
+		if (this.myX > o.myX) return 1;
+		if (this.myY > o.myY) return 1;
+		return 0;
 	}
 }
