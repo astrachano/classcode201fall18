@@ -51,6 +51,14 @@ public class TreeDemo {
 		}
 	}
 	
+	public void postOrder(TreeNode root) {
+		if (root != null) {
+			postOrder(root.left);
+			postOrder(root.right);
+			System.out.println(root.info);
+		}
+	}
+	
 	public void whatOrder(TreeNode root) {
 		LinkedList<TreeNode> list = new LinkedList<>();
 		if (root != null) {
