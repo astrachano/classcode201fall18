@@ -12,8 +12,8 @@ public class Factorial {
 		return n * fact(n-1);
 	}
 	public static void main(String[] args) {
-		int first = -1;
-		int last = 20;
+		int first = 1;
+		int last = 100000;
 		for(int k=first; k <= last; k += 1) {
 			int f1 = factorial(k);
 			int f2 = fact(k);

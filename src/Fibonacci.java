@@ -11,9 +11,14 @@ public class Fibonacci {
 		}
 		return a;
 	}
+	static long [] memo = new long[5000];
 	public static long rfib(int n) {
 		if (n <= 2) return 1;
-		return rfib(n-1) + rfib(n-2);
+		if (memo[n] != 0) {
+			return memo[n];
+		}
+		memo[n] = rfib(n-1) + rfib(n-2);
+		return memo[n];
 	}
 	
 	public static void main(String[] args) {
